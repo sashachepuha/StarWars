@@ -1,6 +1,14 @@
 <template>
     <div class='sw-catalog'>
-        <p>{{ title }}</p>
+        <swCatalogItem/>
+        <swCatalogItem/>
+        <swCatalogItem/>
+        <swCatalogItem/>
+        <swCatalogItem/>
+        <swCatalogItem/>
+        <swCatalogItem/>
+        <swCatalogItem/>
+        <swCatalogItem/>
         <swCatalogItem/>
     </div>
 </template>
@@ -34,5 +42,12 @@ export default {
 </script>
 
 <style lang="scss">
-    
+    .sw-catalog{
+        display: grid;
+        grid-template-columns: max-content max-content max-content;
+        grid-column-gap: 50px;
+        grid-row-gap: 50px;
+        grid-auto-rows: max-content max-content max-content max-content;
+        justify-content: center;
+    }
 </style>

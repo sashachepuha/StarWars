@@ -1,6 +1,5 @@
 <template>
     <div class='sw-main-wrapper'>
-        <p>{{ title }}</p>
         <swCatalog/>
     </div>
 </template>
@@ -34,5 +33,7 @@ export default {
 </script>
 
 <style lang="scss">
-    
+    .sw-main-wrapper {
+        background-color: #F1F3F6;
+    }
 </style>

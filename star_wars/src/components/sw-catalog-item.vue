@@ -1,16 +1,22 @@
 <template>
     <div class='sw-catalog-item'>
+        <swPopap :class="{ active: isPopapVisible }" @closePopap="closePopap">
+            <h3 class="sw-popap__name">{{ people_data.name }}</h3>
+            <span class="sw-popap__species">{{ species }}</span>
+        </swPopap> 
         <h3 class="sw-catalog-item__name">{{ people_data.name }}</h3>
-        <button class="sw-catalog-item__button">MORE</button>
+        <button class="sw-catalog-item__button" @click="showPopap">MORE</button>
         <span class="sw-catalog-item__species">{{ species }}</span>
     </div>
 </template>
 
 <script>
+import swPopap from './sw-popap'
+
 export default {
     name: 'sw-catalog-item',
     components: {
-        // дети
+        swPopap
     },
     props: { 
         people_data:{
@@ -21,7 +27,7 @@ export default {
     },
     data() {
         return {
-            title: "CATALOG ITEM",
+            isPopapVisible: false,
             species: "SPECIES"
         }
     },
@@ -29,7 +35,12 @@ export default {
         // вычисляемые свойства
     },
     methods: {
-        // отлавливаем действия пользователя
+        showPopap(){
+            this.isPopapVisible = true
+        },
+        closePopap(){
+            this.isPopapVisible = false
+        }
     },
     mounted() {
         // хук - отрабатывает после загрузки компонента
@@ -38,6 +49,15 @@ export default {
 </script>
 
 <style lang="scss">
+    .active {
+        transition: all 0.7s;
+        opacity: 1;
+        visibility: visible;
+        .sw-popap__content{
+            transition: all 1s;
+            top:calc(50% - 200px);
+        }
+    }
     .sw-catalog-item {
         position: relative;
         width: 250px;

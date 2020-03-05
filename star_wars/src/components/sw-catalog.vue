@@ -1,20 +1,12 @@
 <template>
     <div class='sw-catalog'>
-        <swCatalogItem/>
-        <swCatalogItem/>
-        <swCatalogItem/>
-        <swCatalogItem/>
-        <swCatalogItem/>
-        <swCatalogItem/>
-        <swCatalogItem/>
-        <swCatalogItem/>
-        <swCatalogItem/>
-        <swCatalogItem/>
+        <swCatalogItem v-for="people in PEOPLES.results" :key="people.name" :people_data="people"/>
     </div>
 </template>
 
 <script>
 import swCatalogItem from './sw-catalog-item'
+import {mapActions, mapGetters} from 'vuex'
 
 export default {
     name: 'sw-catalog',
@@ -26,17 +18,21 @@ export default {
     },
     data() {
         return {
-            title: "CATALOG"
+
         }
     },
     computed: {
-        // вычисляемые свойства
+        ...mapGetters([
+            'PEOPLES'
+        ])
     },
     methods: {
-        // отлавливаем действия пользователя
+        ...mapActions([
+            'GET_PEOPLES'
+        ])
     },
     mounted() {
-        // хук - отрабатывает после загрузки компонента
+        this.GET_PEOPLES()
     },
 }
 </script>

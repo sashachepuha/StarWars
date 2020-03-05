@@ -1,6 +1,6 @@
 <template>
     <div class='sw-catalog-item'>
-        <h3 class="sw-catalog-item__name">{{ title }}</h3>
+        <h3 class="sw-catalog-item__name">{{ people_data.name }}</h3>
         <button class="sw-catalog-item__button">MORE</button>
         <span class="sw-catalog-item__species">{{ species }}</span>
     </div>
@@ -13,7 +13,11 @@ export default {
         // дети
     },
     props: { 
-        // то что получает от родителя
+        people_data:{
+            default(){
+                return {}
+            }
+        }
     },
     data() {
         return {

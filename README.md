@@ -1,5 +1,6 @@
 # STAR WARS
 Микросервис по поиску информации о героях киновселенной Star Wars
+https://sashachepuha.github.io/SW.githab.io/
 
 ## Project setup
 ```

@@ -71,5 +71,12 @@ export default {
             width: 100%;
             font-size: 60px;
         }
+        &__property{
+            display: block;
+            font-family: "Bicubik";
+            font-size: 14px;
+            color: #fff;
+            margin-top: 10px;
+        }
     }
 </style>

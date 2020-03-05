@@ -2,7 +2,11 @@
     <div class='sw-catalog-item'>
         <swPopap :class="{ active: isPopapVisible }" @closePopap="closePopap">
             <h3 class="sw-popap__name">{{ people_data.name }}</h3>
-            <span class="sw-popap__species">{{ species }}</span>
+            <span class="sw-popap__property">Height: {{ people_data.height }}</span>
+            <span class="sw-popap__property">Mass: {{ people_data.mass }}</span>
+            <span class="sw-popap__property">Eye color: {{ people_data.eye_color  }}</span>
+            <span class="sw-popap__property">Birth year: {{ people_data.birth_year  }}</span>
+            <span class="sw-popap__property">Gender: {{ people_data.gender  }}</span>
         </swPopap> 
         <h3 class="sw-catalog-item__name">{{ people_data.name }}</h3>
         <button class="sw-catalog-item__button" @click="showPopap">MORE</button>
